@@ -3,7 +3,8 @@ name: Update Weather Data
 on:
   schedule:
     - cron: '0 * * * *'  # Menjadwalkan eksekusi setiap jam
-
+  workflow_dispatch:
+  
 jobs:
   update-data:
     runs-on: ubuntu-latest
