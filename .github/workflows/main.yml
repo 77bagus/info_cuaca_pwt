@@ -14,12 +14,13 @@ jobs:
 
       - name: Download JSON data
         run: |
-          curl -o weather_data.json "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Soemarto%252C%2520Purwokerto/today?include=fcst%2Cobs%2Chistfcst%2Cstats%2Ccurrent%2Chours&key=3UXRE8BPL2TKN9AQH99SESAYE&contentType=json"
+          curl -o data.json "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Soemarto%252C%2520Purwokerto/today?include=fcst%2Cobs%2Chistfcst%2Cstats%2Ccurrent&key=3UXRE8BPL2TKN9AQH99SESAYE&contentType=json"
 
-      - name: Commit and push changes
+      - name: Update JSON file in repository
         run: |
-          git config --global user.email "bagusprz10@gmail.com"
+          git config --global user.email "you@example.com"
           git config --global user.name "GitHub Actions"
+          mv data.json weather_data.json  # Ubah nama file jika perlu
           git add weather_data.json
-          git commit -m "Update weather data"
+          git commit -m "Update weather data" || true  # Lanjutkan jika tidak ada perubahan
           git push
