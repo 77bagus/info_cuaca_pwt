@@ -15,7 +15,7 @@ jobs:
 
       - name: Download JSON data
         run: |
-          curl -o data.json "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Soemarto%252C%2520Purwokerto/today?include=fcst%2Cobs%2Chistfcst%2Cstats%2Ccurrent&key=3UXRE8BPL2TKN9AQH99SESAYE&contentType=json"
+          curl -o data.json "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Soemarto%252C%2520Purwokerto/today?include=fcst%2Cobs%2Chistfcst%2Cstats%2Chours%2Ccurrent%2Calerts%2Cevents&key=6MLZ4MUTWJJHPRAJGFKB2XUY9&contentType=json"
 
       - name: Update JSON file in repository
         run: |
