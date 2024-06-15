@@ -1,0 +1,25 @@
+name: Update Weather Data
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Menjadwalkan eksekusi setiap jam
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Download JSON data
+        run: |
+          curl -o weather_data.json "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Soemarto%252C%2520Purwokerto/today?include=fcst%2Cobs%2Chistfcst%2Cstats%2Ccurrent%2Chours&key=3UXRE8BPL2TKN9AQH99SESAYE&contentType=json"
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.email "bagusprz10@gmail.com"
+          git config --global user.name "GitHub Actions"
+          git add weather_data.json
+          git commit -m "Update weather data"
+          git push
