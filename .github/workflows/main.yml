@@ -2,7 +2,7 @@ name: Update Weather Data
 
 on:
   schedule:
-    - cron: '*/15 * * * *'  # Menjalankan setiap 15 menit
+    - cron: '0 * * * *'  # Menjadwalkan eksekusi setiap jam
   workflow_dispatch:
   
 jobs:
