@@ -1,15 +1,1 @@
-{
-  "timestamp": "2024-06-18T12:00:00",
-  "sensor_value": 600,
-  "status": "Data sent to GitHub"
-},
-{
-  "timestamp": "2024-06-18T12:10:00",
-  "sensor_value": 580,
-  "status": "Data sent to GitHub"
-},
-{
-  "timestamp": "2024-06-18T12:20:00",
-  "sensor_value": 550,
-  "status": "Data sent to GitHub"
-}
+1
